@@ -26,16 +26,35 @@
           color: white;
         }
       </style>
+
+      <!-- 자바스크립트 사용하기 -->
+      <script type="text/javascript" src="js/basic_js_test.js"></script>
+      <!-- defer 자바스크립트 먼저 로딩 후 페이지 동작 -->
+      <script type="text/javascript" src="js/search.js" defer></script>
     </head>
 
     <body style="background-color: black">
       <div style="display: flex; justify-content: center">
         <!-- 로고이미지 -->
-        <img src="image/riot_logo.png" width="200" height="80" />
+        <!-- <img src="image/riot_logo.png" width="200" height="80" /> -->
 
         <!-- 네비바 -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
+            <nav class="navbar bg-body-tertiary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                  <img
+                    src="image/riot_logo.png"
+                    alt="Logo"
+                    width="30"
+                    height="24"
+                    class="d-inline-block align-text-top"
+                  />
+                  Bootstrap
+                </a>
+              </div>
+            </nav>
             <a class="navbar-brand" href="#">Navbar</a>
             <button
               class="navbar-toggler"
@@ -83,18 +102,15 @@
                   <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                 </li>
               </ul>
-              <form class="d-flex" role="search">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
             </div>
+              <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" id="search_btn" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
           </div>
         </nav>
 
@@ -119,13 +135,16 @@
       <!-- 메인이미지 -->
       <div style="display: flex; justify-content: center">
         <a href="index.html" target="_blank">
-          <img src="image/main_image.jpg" width="1200" height="768" />
+          <!-- <img src="image/main_image.jpg" width="1200" height="768" /> -->
+          <!-- 반응형 이미지 -->
+          <img src="image/main_image.jpg" class="img-fluid" alt="..." />
         </a>
       </div>
 
       <!-- 테이블 -->
       <div style="display: flex; justify-content: center">
-        <table border="1">
+        <!-- 이전테이블 -->
+        <!-- <table class="table">
           <caption>
             인기 캐릭터
           </caption>
@@ -151,6 +170,49 @@
               <td colspan="2">
                 <img src="image/VI_icon.jpg" width="50" height="50" />
                 <font size="13">바이1, 2</font>
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
+
+        <!-- 테이블 속성 추가 -->
+        <table class="table">
+          <caption>
+            인기 캐릭터
+          </caption>
+          <thead>
+            <tr class="table-primary">
+              <th scope="col">#</th>
+              <th scope="col">1</th>
+              <th scope="col">2</th>
+              <th scope="col">3</th>
+              <th scope="col">4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-secondary">
+              <th scope="row">1</th>
+              <td>사이온</td>
+              <td>아리</td>
+              <td>가렌</td>
+              <td>가렌2</td>
+            </tr>
+            <tr class="table-success">
+              <th scope="row">공백</th>
+              <td colspan="4">
+                <a href="https://www.leagueoflegends.com/ko-kr/" target="_blank"
+                  >롤 웹사이트 접속하기</a
+                >
+              </td>
+            </tr>
+            <tr class="table-danger">
+              <th scope="row">2</th>
+              <td>카직스</td>
+              <td>루시안</td>
+              <td>루시안2</td>
+              <td colspan="2">
+                <img src="image/VI_icon.jpg" width="50" height="50" />
+                <p class="fs-3">바이1, 2</p>
               </td>
             </tr>
           </tbody>
